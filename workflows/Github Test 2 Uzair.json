@@ -24,6 +24,30 @@
       ],
       "id": "ede2a02f-6b17-4d69-8c69-a841ded45c75",
       "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        368,
+        -32
+      ],
+      "id": "bc39db71-829e-411b-86eb-79bf9c7f6d7f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        160
+      ],
+      "id": "ed28fe73-ea34-4ea4-a068-e1e7f476732d",
+      "name": "Simple Memory"
     }
   ],
   "pinData": {},
@@ -38,13 +62,35 @@
           }
         ]
       ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "3508b2ac-92be-469c-87e1-9b1f7c9ab042",
+  "versionId": "cfa76024-0b8f-4acc-8c01-38647a7707d4",
   "meta": {
     "instanceId": "b92a9585b8d6c638b0263138ee4329307ca4657f0cad8dd880d1be5eb39baf05"
   },
