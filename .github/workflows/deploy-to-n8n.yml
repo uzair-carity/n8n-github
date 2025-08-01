@@ -18,4 +18,4 @@ jobs:
 
       - name: Run deploy script
         run: |
-          ./scripts/deploy-workflows.sh "${{ secrets.N8N_DEV_URL }}" "${{ secrets.N8N_DEV_API_KEY }}"
+          ./scripts/deploy-workflows.sh "${{ secrets.N8N_DEV_HOST }}" "${{ secrets.N8N_DEV_API_KEY }}"

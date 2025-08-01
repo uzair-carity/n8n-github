@@ -1,0 +1,56 @@
+{
+  "name": "Github Test",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -256,
+        32
+      ],
+      "id": "c84843da-3624-4fc9-b569-6d15c403887d",
+      "name": "When chat message received",
+      "webhookId": "2a9c88ad-27e4-40c4-bb90-369e7a051431"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -16,
+        32
+      ],
+      "id": "400fcd95-9140-47ed-a5b2-f3b4058ca208",
+      "name": "AI Agent"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ed2a70a7-454d-44ab-9684-d543da555c9b",
+  "meta": {
+    "instanceId": "b92a9585b8d6c638b0263138ee4329307ca4657f0cad8dd880d1be5eb39baf05"
+  },
+  "id": "pmGGpu1AnUVbAu4P",
+  "tags": []
+}
