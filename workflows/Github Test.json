@@ -65,6 +65,17 @@
       ],
       "id": "db99758e-4cf7-4f3f-8273-f1fcfa3b3c59",
       "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        304
+      ],
+      "id": "f96b30bd-7a42-423b-be87-5eb64f2bf95c",
+      "name": "Simple Memory"
     }
   ],
   "pinData": {},
@@ -101,13 +112,24 @@
           }
         ]
       ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "fc8684dd-934e-4b98-9c17-eee11187ce49",
+  "versionId": "52dd391e-ce44-4732-8e71-a557aa4c0d26",
   "meta": {
     "instanceId": "b92a9585b8d6c638b0263138ee4329307ca4657f0cad8dd880d1be5eb39baf05"
   },
