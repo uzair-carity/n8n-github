@@ -34,20 +34,23 @@ for file in $WORKFLOWS_DIR/*.json; do
     -H "accept: application/json" \
     -H "X-N8N-API-KEY: $API_KEY")
 
-  id=$(echo "$response" | jq -r --arg name "$name" '.workflows[] | select(.name == $name) | .id')
+  id=$(echo "$response" | jq -r --arg name "$name" '.data[] | select(.name == $name) | .id')
+
+  # Filter the fields expected by the API
+  filtered_workflow=$(jq '{name, nodes, connections, settings}' "$file")
 
   if [[ -n "$id" ]]; then
     echo "→ Updating existing workflow '$name' (ID: $id)..."
-    curl -s -X PATCH "$N8N_HOST/api/v1/workflows/$id" \
+    curl -s -X PUT "$N8N_HOST/api/v1/workflows/$id" \
       -H "X-N8N-API-KEY: $API_KEY" \
       -H "Content-Type: application/json" \
-      --data-binary "@$file"
+      --data "$filtered_workflow"
   else
     echo "→ Creating new workflow '$name'..."
     curl -s -X POST "$N8N_HOST/api/v1/workflows" \
       -H "X-N8N-API-KEY: $API_KEY" \
       -H "Content-Type: application/json" \
-      --data-binary "@$file"
+      --data "$filtered_workflow"
   fi
 done
 

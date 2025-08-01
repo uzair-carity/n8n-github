@@ -1,0 +1,21 @@
+name: Deploy Workflows to n8n (Develop)
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Run deploy script
+        run: |
+          ./scripts/deploy-workflows.sh "${{ secrets.N8N_DEV_HOST }}" "${{ secrets.N8N_DEV_API_KEY }}"
