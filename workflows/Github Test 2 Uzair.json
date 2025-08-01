@@ -1,0 +1,53 @@
+{
+  "name": "Github Test 2 Uzair",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -96,
+        -32
+      ],
+      "id": "36a5fa7c-5cfa-4df5-82cc-4777f1bd6829",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        -32
+      ],
+      "id": "ede2a02f-6b17-4d69-8c69-a841ded45c75",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3508b2ac-92be-469c-87e1-9b1f7c9ab042",
+  "meta": {
+    "instanceId": "b92a9585b8d6c638b0263138ee4329307ca4657f0cad8dd880d1be5eb39baf05"
+  },
+  "id": "3utrEEdBe8ZP0Icz",
+  "tags": []
+}
