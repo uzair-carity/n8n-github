@@ -41,7 +41,7 @@ for file in $WORKFLOWS_DIR/*.json; do
 
   if [[ -n "$id" ]]; then
     echo "→ Updating existing workflow '$name' (ID: $id)..."
-    curl -s -X PATCH "$N8N_HOST/api/v1/workflows/$id" \
+    curl -s -X PUT "$N8N_HOST/api/v1/workflows/$id" \
       -H "X-N8N-API-KEY: $API_KEY" \
       -H "Content-Type: application/json" \
       --data "$filtered_workflow"
